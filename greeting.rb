@@ -9,3 +9,14 @@ def greeting
 end
 
 greeting
+
+=begin
+BLOC's solution
+
+greeting = ARGV.shift
+
+ARGV.each do |name|
+  p "#{greeting} #{name}"
+end
+
+=end
