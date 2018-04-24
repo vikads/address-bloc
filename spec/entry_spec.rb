@@ -1,28 +1,36 @@
 require_relative '../models/entry'
-# #1 is the standard first line of an RSpec test file.
-#We are saying that the file is a spec file and that it tests Entry
+
 RSpec.describe Entry do
-  # #2 we use describe to give our test structure.
-  #In this case, we're using it to communicate that the specs test the Entry attributes.
   describe "attributes" do
-    # #3 we separate our individual tests using the it method. Each it represents a unique test.
+    let(:entry) { Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com') }
+
     it "responds to name" do
       entry = Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
-      # #4 each RSpec test ends with one or more expect method, which we use to declare the expectations for the test.
-      #If those expectations are met, our test passes, if they are not, it fails.
-
-
       expect(entry).to respond_to(:name)
     end
 
+    it "reports its name" do
+      expect(entry.name).to eq('Ada Lovelace')
+    end
+
+
     it "responds to phone number" do
-      entry = Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
       expect(entry).to respond_to(:phone_number)
     end
 
+
+    it "reports its phone_number" do
+       expect(entry.phone_number).to eq('010.012.1815')
+    end
+
+
     it "responds to e-mail" do
-      entry = Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
       expect(entry).to respond_to(:email)
+    end
+
+
+    it "reports its email" do
+      expect(entry.email).to eq('augusta.king@lovelace.com')
     end
   end
 end
