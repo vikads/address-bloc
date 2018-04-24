@@ -7,7 +7,7 @@ RSpec.describe Entry do
   describe "attributes" do
     # #3 we separate our individual tests using the it method. Each it represents a unique test.
     it "responds to name" do
-      entry = Entry.new
+      entry = Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
       # #4 each RSpec test ends with one or more expect method, which we use to declare the expectations for the test.
       #If those expectations are met, our test passes, if they are not, it fails.
 
@@ -16,12 +16,12 @@ RSpec.describe Entry do
     end
 
     it "responds to phone number" do
-      entry = Entry.new
+      entry = Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
       expect(entry).to respond_to(:phone_number)
     end
 
     it "responds to e-mail" do
-      entry = Entry.new
+      entry = Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
       expect(entry).to respond_to(:email)
     end
   end
