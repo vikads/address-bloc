@@ -52,6 +52,16 @@ require_relative '../models/address_book'
 
   # #10
   def view_all_entries
+
+    address_book.entries.each do |entry|
+      system "clear"
+      puts entry.to_s
+
+      entry_submenu(entry)
+    end
+
+    system "clear"
+    puts "End of entries"
   end
 
   def create_entry
@@ -79,7 +89,31 @@ require_relative '../models/address_book'
   def read_csv
   end
 
+  def entry_submenu(entry)
+    puts "n - next entry"
+    puts "d - delete entry"
+    puts "e - edit this entry"
+    puts "m - return to main menu"
 
+    selection = gets.chomp
+
+    case selection
+
+    when "n"
+
+    when "d"
+
+    when "e"
+
+    when "m"
+      system "clear"
+      main_menu
+    else
+      system "clear"
+      puts "#{selection} is not a valid input"
+      entry_submenu(entry)
+    end 
+  end
 
 
 end
