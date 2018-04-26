@@ -74,8 +74,8 @@ require_relative '../models/address_book'
     puts "Entry number: "
     selection = gets.chomp.to_i
 
-    if selection < address_book.entries.count
-      puts address_book.entries[selection]
+    if selection < @address_book.entries.count
+      puts @address_book.entries[selection - 1]
 
     else
       puts "Number #{selection} is invalid."
