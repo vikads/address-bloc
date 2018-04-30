@@ -36,7 +36,7 @@ class AddressBook
   end
 
   def import_from_csv(file_name)
-    #implementation goes here
+
     csv_text = File.read(file_name)
     csv = CSV.parse(csv_text, headers: true, skip_blanks: true)
 
@@ -46,7 +46,10 @@ class AddressBook
     end
   end
 
-  
+  def binary_search(name)
+    #search AddressBook for a specific entry by name 
+  end
+
 
 
 end
