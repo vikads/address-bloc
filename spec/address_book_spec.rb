@@ -85,7 +85,7 @@ RSpec.describe AddressBook do
       end
 
       it "imports the 3rd entry" do
-        book.import_from_csv("entries.cvs")
+        book.import_from_csv("entries.csv")
         entry_three = book.entries[2]
 
         check_entry(entry_three, "Joe", "555-555-3660", "joe@blocmail.com")
