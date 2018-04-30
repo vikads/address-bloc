@@ -22,6 +22,7 @@ class AddressBook
   end
 
   def remove_entry(name, phone_number, email)
+    
     delete_entry = nil
 
     @entries.each do |entry|
@@ -32,5 +33,6 @@ class AddressBook
 
     @entries.delete(delete_entry)
   end
+
 
 end
