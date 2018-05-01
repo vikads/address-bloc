@@ -37,6 +37,9 @@ class AddressBook
     @entries.delete(delete_entry)
   end
 
+  def destroy
+    @entries = []
+  end
 
   def import_from_csv(file_name)
 

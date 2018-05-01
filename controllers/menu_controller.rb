@@ -13,9 +13,10 @@ require_relative '../models/address_book'
      puts "1 - View all entries"
      puts "2 - View entry number"
      puts "3 - Create an entry"
-     puts "4 - Search for an entry"
-     puts "5 - Import entries from a CSV"
-     puts "6 - Exit"
+     puts "4 - Delete all entries"
+     puts "5 - Search for an entry"
+     puts "6 - Import entries from a CSV"
+     puts "7 - Exit"
      print "Enter your selection: "
 
 
@@ -37,13 +38,18 @@ require_relative '../models/address_book'
         main_menu
       when 4
         system "clear"
-        search_entries
+        @address_book.destroy
+        puts "All the entries deleted"
         main_menu
       when 5
         system "clear"
-        read_csv
+        search_entries
         main_menu
       when 6
+        system "clear"
+        read_csv
+        main_menu
+      when 7
         puts "Good-bye!"
 
         exit(0)
@@ -204,7 +210,7 @@ require_relative '../models/address_book'
 
      selection = gets.chomp
 
-     
+
      case selection
        when "d"
          system "clear"
