@@ -126,7 +126,7 @@ require_relative '../models/address_book'
     system "clear"
 
     puts "Updated entry:"
-    puts entry 
+    puts entry
   end
 
   def read_csv
@@ -165,8 +165,13 @@ require_relative '../models/address_book'
 
     when "d"
 
+      delete_entry(entry)
+
     when "e"
 
+      edit_entry(entry)
+      entry_submenu(entry)
+      
     when "m"
       system "clear"
       main_menu
