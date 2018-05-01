@@ -52,6 +52,8 @@ class AddressBook
     end
   end
 
+  
+
 
   def binary_search(name)
     #search AddressBook for a specific entry by name
