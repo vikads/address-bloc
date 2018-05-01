@@ -106,6 +106,11 @@ require_relative '../models/address_book'
   def search_entries
   end
 
+  def delete_entry(entry)
+    address_book.entries.delete(entry)
+    puts "#{entry.name} has been deleted"
+  end
+
   def read_csv
 
     print "Enter CSV file to import: "
@@ -124,7 +129,7 @@ require_relative '../models/address_book'
     rescue
       puts "#{file_name} is not a valid CSV file, please enter the name of a valid CSV file"
       read_csv
-    end 
+    end
   end
 
   def entry_submenu(entry)
