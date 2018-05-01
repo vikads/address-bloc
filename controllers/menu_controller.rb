@@ -126,19 +126,19 @@ require_relative '../models/address_book'
   end
 
   def edit_entry(entry)
-     # #4
+
      print "Updated name: "
      name = gets.chomp
      print "Updated phone number: "
      phone_number = gets.chomp
      print "Updated email: "
      email = gets.chomp
-     # #5
+
      entry.name = name if !name.empty?
      entry.phone_number = phone_number if !phone_number.empty?
      entry.email = email if !email.empty?
      system "clear"
-     # #6
+
      puts "Updated entry:"
      puts entry
    end
@@ -198,29 +198,32 @@ require_relative '../models/address_book'
 
   def search_submenu(entry)
 
-    puts "\nd - delete_entry"
-    puts "e - edit this entry"
-    puts "m - return to main menu"
+     puts "\nd - delete entry"
+     puts "e - edit this entry"
+     puts "m - return to main menu"
 
-    case selection
-      when "d"
-        system "clear"
-        delete_entry(entry)
-        main_menu
-      when "e"
-        edit_entry(entry)
-        system "clear"
-        main_menu
-      when "m"
-        system "clear"
-        main_menu
-      else
-        system "clear"
-        puts "#{selection} is not a valid input"
-        puts entry.to_s
-        search_submenu(entry)
-      end
-    end
+     selection = gets.chomp
+
+     
+     case selection
+       when "d"
+         system "clear"
+         delete_entry(entry)
+         main_menu
+       when "e"
+         edit_entry(entry)
+         system "clear"
+         main_menu
+       when "m"
+         system "clear"
+         main_menu
+       else
+         system "clear"
+         puts "#{selection} is not a valid input"
+         puts entry.to_s
+         search_submenu(entry)
+     end
+   end
 
 
 end
